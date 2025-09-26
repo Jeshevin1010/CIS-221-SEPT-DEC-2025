@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #ff69b4;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .fashion-options {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .item {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 10px;
+            padding: 15px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .item:hover {
+            transform: scale(1.05);
+        }
+        .item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .sales-table, .inventory {
+            margin: 20px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #ff69b4;
+            color: white;
+        }
+        .benefits {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        button {
+            background-color: #ff69b4;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+        button:hover {
+            background-color: #e55a9f;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Fashion Store</h1>
+        <p>Your one-stop shop for the latest fashion trends!</p>
+    </header>
+
+    <div class="container">
+        <section class="fashion-options">
+            <h2>Our Fashion Options</h2>
+            <div class="item">
+                <img src="https://via.placeholder.com/300x200?text=Dress" alt="Dress">
+                <h3>Elegant Dress</h3>
+                <p>Perfect for evening events. Available in multiple colors.</p>
+                <p><strong>Price: $49.99</strong></p>
+            </div>
+            <div class="item">
+                <img src="https://via.placeholder.com/300x200?text=Shirt" alt="Shirt">
+                <h3>Casual Shirt</h3>
+                <p>Comfortable and stylish for everyday wear.</p>
+                <p><strong>Price: $29.99</strong></p>
+            </div>
+            <div class="item">
+                <img src="https://via.placeholder.com/300x200?text=Jeans" alt="Jeans">
+                <h3>Denim Jeans</h3>
+                <p>Durable and fashionable jeans for all occasions.</p>
+                <p><strong>Price: $39.99</strong></p>
+            </div>
+        </section>
+
+        <section class="sales-table">
+            <h2>Upcoming Sale Offers</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Offer Name</th>
+                        <th>Discount</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Autumn Sale</td>
+                        <td>20% off</td>
+                        <td>October 1, 2025</td>
+                        <td>October 15, 2025</td>
+                    </tr>
+                    <tr>
+                        <td>Halloween Special</td>
+                        <td>30% off on costumes</td>
+                        <td>October 20, 2025</td>
+                        <td>October 31, 2025</td>
+                    </tr>
+                    <tr>
+                        <td>Black Friday</td>
+                        <td>Up to 50% off</td>
+                        <td>November 28, 2025</td>
+                        <td>November 29, 2025</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="benefits">
+            <h2>Benefits of Purchasing from Fashion Store</h2>
+            <ul>
+                <li>High-quality materials and craftsmanship.</li>
+                <li>Fast and free shipping on orders over $50.</li>
+                <li>Easy returns and exchanges within 30 days.</li>
+                <li>Exclusive member discounts and loyalty rewards.</li>
+                <li>24/7 customer support for all your queries.</li>
+            </ul>
+        </section>
+
+        <section class="inventory">
+            <h2>Inventory Tracking</h2>
+            <div class="form-container">
+                <h3>Add New Item</h3>
+                <input type="text" id="item_name" placeholder="Item Name">
+                <input type="number" id="bought" placeholder="Quantity Bought">
+                <input type="number" id="price" placeholder="Price" step="0.01">
+                <button onclick="addItem()">Add Item</button>
+            </div>
+            <div class="form-container">
+                <h3>Record Sale</h3>
+                <input type="number" id="item_id" placeholder="Item ID">
+                <input type="number" id="quantity" placeholder="Quantity Sold">
+                <button onclick="sellItem()">Record Sale</button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Item Name</th>
+                        <th>Bought</th>
+                        <th>Sold</th>
+                        <th>In Stock</th>
+                        <th>Revenue</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in items %}
+                    <tr>
+                        <td>{{ item[0] }}</td>
+                        <td>{{ item[1] }}</td>
+                        <td>{{ item[2] }}</td>
+                        <td>{{ item[3] }}</td>
+                        <td>{{ item[4] }}</td>
+                        <td>${{ "%.2f" % item[5] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <p><strong>Total Revenue: ${{ "%.2f" % total_revenue }}</strong></p>
+        </section>
+    </div>
+
+    <footer>
+        &copy; 2025 Fashion Store. All rights reserved.
+    </footer>
+
+    <script>
+        async function addItem() {
+            const item_name = document.getElementById('item_name').value;
+            const bought = document.getElementById('bought').value;
+            const price = document.getElementById('price').value;
+            if (item_name && bought && price) {
+                const response = await fetch('/add_item', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ item_name, bought, price })
+                });
+                if (response.ok) {
+                    location.reload();
+                } else {
+                    alert('Error adding item');
+                }
+            } else {
+                alert('Please fill all fields');
+            }
+        }
+
+        async function sellItem() {
+            const item_id = document.getElementById('item_id').value;
+            const quantity = document.getElementById('quantity').value;
+            if (item_id && quantity) {
+                const response = await fetch('/sell_item', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ id: item_id, quantity })
+                });
+                if (response.ok) {
+                    location.reload();
+                } else {
+                    alert('Error recording sale');
+                }
+            } else {
+                alert('Please fill all fields');
+            }
+        }
+    </script>
+</body>
+</html>
