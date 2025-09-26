@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fashion Store</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(to right, #ff4b2b, #ff416c);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    nav {
+      background: #222;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #ff416c;
+    }
+
+    .container {
+      width: 90%;
+      margin: 20px auto;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .product-card {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-card img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    .product-card h3 {
+      margin: 10px 0;
+      color: #ff416c;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 30px 0;
+      background: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    table th, table td {
+      padding: 12px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+
+    table th {
+      background: #ff416c;
+      color: white;
+    }
+
+    .benefits {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin: 20px 0;
+    }
+
+    .benefits h2 {
+      color: #ff416c;
+    }
+
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Fashion Store</h1>
+    <p>Style that speaks for you</p>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Men</a>
+    <a href="#">Women</a>
+    <a href="#">Accessories</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <div class="container">
+    <h2>Our Collection</h2>
+    <div class="products">
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200x250" alt="Dress">
+        <h3>Elegant Dress</h3>
+        <p>$45.00</p>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200x250" alt="Shoes">
+        <h3>Classic Shoes</h3>
+        <p>$60.00</p>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200x250" alt="Jacket">
+        <h3>Leather Jacket</h3>
+        <p>$120.00</p>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200x250" alt="Handbag">
+        <h3>Designer Handbag</h3>
+        <p>$85.00</p>
+      </div>
+    </div>
+
+    <h2>Upcoming Sale Offers</h2>
+    <table>
+      <tr>
+        <th>Sale Event</th>
+        <th>Date</th>
+        <th>Discount</th>
+      </tr>
+      <tr>
+        <td>Winter Clearance</td>
+        <td>Oct 15 - Oct 25</td>
+        <td>Up to 50% Off</td>
+      </tr>
+      <tr>
+        <td>Black Friday</td>
+        <td>Nov 29</td>
+        <td>Flat 60% Off</td>
+      </tr>
+      <tr>
+        <td>Christmas Special</td>
+        <td>Dec 20 - Dec 25</td>
+        <td>Buy 1 Get 1 Free</td>
+      </tr>
+    </table>
+
+    <div class="benefits">
+      <h2>Why Shop With Us?</h2>
+      <ul>
+        <li>Trendy and premium quality fashion items</li>
+        <li>Affordable prices with amazing discounts</li>
+        <li>Fast and reliable delivery</li>
+        <li>24/7 customer support</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Fashion Store. All Rights Reserved.
+  </footer>
+
+</body>
+</html>
+
+
